@@ -28,7 +28,7 @@ if __name__ == '__main__':
 
     data = dataset[0]
     print(dataset.data)
-    device = torch.device('cpu')
+    device = torch.device('cuda')
 
 
 
