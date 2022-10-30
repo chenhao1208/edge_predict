@@ -120,7 +120,7 @@ if __name__ == '__main__':
             loss_list.append(celoss1(out_sigmoid[i], edge_label[i]))
 
         loss_list = np.array(loss_list)
-        loss = criterion(out, edge_label) + 0.001*penalty
+        loss = criterion(out, edge_label) + 0.00001 * penalty
         loss.backward()
         optimizer.step()
         return loss, loss_list
@@ -199,7 +199,7 @@ if __name__ == '__main__':
                 out_sigmoid[i] = 9.999e-01
             elif out_sigmoid[i] == 0:
                 out_sigmoid[i] = 1e-03
-            loss2[i] = celoss1(out_sigmoid[i], edge_label[i])
+            loss2[i] = celoss1(out_sigmoid[i], edge_label[i]) + 0.00001 * out_sigmoid[i] * log(out_sigmoid[i])
 
         loss2 = np.array(loss2)
         loss3 = loss2.reshape(-1, 1)
