@@ -205,7 +205,7 @@ if __name__ == '__main__':
         loss3 = loss2.reshape(-1, 1)
 
 
-        '''将同嗜边和异嗜边对应的交叉熵损失存在两个list中'''
+        '''将同质边和异质边对应的交叉熵损失存在两个list中'''
         homo = []
         hetero = []
         for i in range(int(len(out) / 2)):
